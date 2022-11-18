@@ -19,9 +19,29 @@ Route::get('/', function () {
 Route::get('/prueba', function () {
     return view('prueba');
 });
-Route::post('api/cargos/guardar', 'CargosController@store');
-Route::post('api/productos/guardar', 'ProductosController@store');
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('api/cargos/index', 'CargosController@index');
+Route::post('api/cargos/guardar', 'CargosController@store');
+Route::put('api/cargos/actualizar', 'CargosController@update');
+Route::delete('api/cargos/eliminar', 'CargosController@destroy');
+Route::get('api/productos/index', 'ProductosController@index');
+Route::post('api/productos/guardar', 'ProductosController@store');
+Route::put('api/productos/actualizar', 'ProductosController@update');
+Route::delete('api/productos/eliminar', 'ProductosController@destroy');
+Route::get('api/pedidos/index', 'PedidosController@index');
+Route::post('api/pedidos/guardar', 'PedidosController@store');
+Route::put('api/pedidos/actualizar', 'PedidosController@update');
+Route::delete('api/pedidos/eliminar', 'PedidosController@destroy');
+Route::get('api/personas/index', 'PersonasController@index');
+Route::post('api/personas/guardar', 'PersonasController@store');
+Route::put('api/personas/actualizar', 'PersonasController@update');
+Route::delete('api/personas/eliminar', 'PersonasController@destroy');
+Route::get('api/detalle_pedidos/index', 'DetallePedidosController@index');
+Route::post('api/detalle_pedidos/guardar', 'DetallePedidosController@store');
+Route::put('api/detalle_pedidos/actualizar', 'DetallePedidosController@update');
+Route::delete('api/detalle_pedidos/eliminar', 'DetallePedidosController@destroy');
+
+

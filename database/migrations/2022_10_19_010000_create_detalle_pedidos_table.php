@@ -15,7 +15,7 @@ class CreateDetallePedidosTable extends Migration
     {
         Schema::create('detalle_pedidos', function (Blueprint $table) {
             $table->id();
-            $table->integer('cantidad');
+            $table->integer('cantidad')();
             $table->string('observacion');
             
             $table->foreignId('pedido_id')->constrained('pedidos');

@@ -1,4 +1,10 @@
 window._ = require('lodash');
+import 'lodash';
+import 'popper.js';
+import 'jquery';
+import 'axios';
+
+
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support

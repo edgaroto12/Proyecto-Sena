@@ -16,9 +16,25 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/clientes', function () {
+    return view('clientes');
+});
+Route::get('/productos', function () {
+    return view('productos');
+});
+Route::get('/pedidos', function () {
+    return view('pedidos');
+});
+Route::get('/cargos', function () {
+    return view('cargos');
+});
+Route::get('/detalle_pedidos', function () {
+    return view('detalle_pedidos');
+});
 Route::get('/prueba', function () {
     return view('prueba');
 });
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -43,5 +59,7 @@ Route::get('api/detalle_pedidos/index', 'DetallePedidosController@index');
 Route::post('api/detalle_pedidos/guardar', 'DetallePedidosController@store');
 Route::put('api/detalle_pedidos/actualizar', 'DetallePedidosController@update');
 Route::delete('api/detalle_pedidos/eliminar', 'DetallePedidosController@destroy');
-
-
+Route::get('api/cargos/index', 'CargosController@index');
+Route::post('api/cargos/guardar', 'CargosController@store');
+Route::put('api/cargos/actualizar', 'CargosController@update');
+Route::delete('api/cargos/eliminar', 'CargosController@destroy');
